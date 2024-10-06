@@ -36,7 +36,12 @@ class WelcomePage extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                textStyle: TextStyle(fontSize: 22)
+                backgroundColor: Color(0xFF4DB6AC), // Teal
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                textStyle: TextStyle(fontSize: 25),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
               ),
               child: Text('Start Assessment'),
             ),

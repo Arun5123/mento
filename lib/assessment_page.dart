@@ -68,7 +68,7 @@ class _AssessmentPageState extends State<AssessmentPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Assessment'),
-        backgroundColor: Colors.teal[700],
+        backgroundColor: Color(0xFFF5F5F5),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -76,7 +76,11 @@ class _AssessmentPageState extends State<AssessmentPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 60),
+              Text(
+                'Answer the following questions.',
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 20,fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 40),
               DropdownButtonFormField<String>(
                 value: _selectedCountry,
                 decoration: InputDecoration(
@@ -88,7 +92,7 @@ class _AssessmentPageState extends State<AssessmentPage> {
                     .toList(),
                 onChanged: (value) => setState(() => _selectedCountry = value!),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
                   labelText: 'Year of Birth',
@@ -97,22 +101,22 @@ class _AssessmentPageState extends State<AssessmentPage> {
                 keyboardType: TextInputType.number,
                 onChanged: (value) => setState(() => _birthYear = int.parse(value)),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               _buildSlider('Schizophrenia', _schizophrenia, (value) => setState(() => _schizophrenia = value)),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               _buildSlider('Bipolar Disorder', _bipolar, (value) => setState(() => _bipolar = value)),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               _buildSlider('Eating Disorder', _eatingDisorder, (value) => setState(() => _eatingDisorder = value)),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               _buildSlider('Anxiety', _anxiety, (value) => setState(() => _anxiety = value)),
-              SizedBox(height: 30),
+              SizedBox(height: 80),
               // Center the button
               Center(
                 child: ElevatedButton(
                   onPressed: _getPrediction,
                   child: Text('Get Prediction'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal[700],
+                    backgroundColor: Color(0xFF4DB6AC), // Teal
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     textStyle: TextStyle(fontSize: 25),
                     shape: RoundedRectangleBorder(

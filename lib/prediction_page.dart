@@ -14,7 +14,7 @@ class PredictionPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Prediction Result'),
-        backgroundColor: Color(0xFF0288D1), // Deep blue
+        backgroundColor: Color(0xFFF5F5F5), // Deep blue
       ),
       body: Center(
         child: Column(
